@@ -46,15 +46,15 @@ func License() string {
 // Parse returns parsed whois info
 func Parse(text string) (whoisInfo WhoisInfo, err error) { //nolint:cyclop
 	name, extension := searchDomain(text)
-	if name == "" {
-		err = getDomainErrorType(text)
-		return
-	}
+	// if name == "" {
+	// 	err = getDomainErrorType(text)
+	// 	return
+	// }
 
-	if extension != "" && isExtNotFoundDomain(text, extension) {
-		err = ErrNotFoundDomain
-		return
-	}
+	// if extension != "" && isExtNotFoundDomain(text, extension) {
+	// 	err = ErrNotFoundDomain
+	// 	return
+	// }
 
 	domain := &Domain{}
 	registrar := &Contact{}
